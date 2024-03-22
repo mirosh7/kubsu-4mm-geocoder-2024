@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "kubsu-4mm-map-2024": {
+    "kubsu-4mm-2024-map": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/kubsu-4mm-map-2024",
+            "outputPath": "dist/kubsu-4mm-2024-map",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -30,7 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/leaflet/dist/leaflet.css"
             ],
             "scripts": []
           },
@@ -62,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "kubsu-4mm-map-2024:build:production"
+              "buildTarget": "kubsu-4mm-2024-map:build:production"
             },
             "development": {
-              "buildTarget": "kubsu-4mm-map-2024:build:development"
+              "buildTarget": "kubsu-4mm-2024-map:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "kubsu-4mm-map-2024:build"
+            "buildTarget": "kubsu-4mm-2024-map:build"
           }
         },
         "test": {
