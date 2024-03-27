@@ -1,4 +1,6 @@
-<div class="map"
-     leaflet
-     [leafletOptions]="options">
+<div class = "inputField">
+     <input type="text" #box (keydown.enter)="onGetValue(box.value)" placeholder="Enter interesting place" name="NAME">
+     <button (click)="onGetValue(box.value)" class="overlay-button">Search</button>
+</div>
+<div class="map" leaflet [leafletOptions]="options">
 </div>

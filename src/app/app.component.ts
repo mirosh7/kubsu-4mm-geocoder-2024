@@ -35,6 +35,15 @@ export class AppComponent implements OnInit {
     });
   }
 
+public onGetValue(val:string){
+  if (val !== undefined) {
+    this.geocodingService.search(val)
+      .subscribe(coordinates => {
+        this.leaflet.getMap().flyTo(coordinates, 17);
+      });
+  }
+}
+
   protected options = {
     layers: [
       tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18, attribution: '...'})
